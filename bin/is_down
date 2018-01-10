@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'is_down'
+
+host = ARGV[0]
+
+if IsDown.is_down?(host)
+  puts "#{host} is down"
+else
+  puts "#{host} is up"
+end
