@@ -16,7 +16,7 @@ module IsDown
   # checks if a website is up
   # takes a domain name as the only argument
   def self.is_up?(host)
-    resp = Net::HTTP.get_response(URI(ISUPME + host + ".json"))
+    resp = Net::HTTP.get_response(URI(ISITUP + host + ".json"))
     JSON.parse(resp.body)['status_code'] == 1
   end
 end
