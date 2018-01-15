@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = IsDown::VERSION
   spec.authors       = ["Gr3atWh173"]
   spec.email         = ["Gr3atWh173@users.noreply.github.com"]
-  spec.summary       = %q{rubygem to check if a website is down or not.}
+  spec.summary       = %q{rubygem to check if a website is down or not using isitup.org API.}
   spec.homepage      = "https://www.github.com/Gr3atWh173/is_down"
   spec.license       = "MIT"
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|

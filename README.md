@@ -1,6 +1,6 @@
 # IsDown
 
-Check if a website is up and running or not.
+Check if a website is up and running or not using isitup.org API.
 
 ## Installation
 
@@ -33,6 +33,12 @@ require 'is_down'
 puts IsDown.is_down?("www.facebook.com") # false
 puts IsDown.is_up?("www.facebook.com") # true
 ```
+
+## Common issues
+On Windows, Ruby may raise an SSL error. To fix it:
+1. Download a cacert from https://curl.haxx.se/docs/caextract.html
+2. Set an environment variable 'SSL\_CERT\_FILE' to the path of the downloaded file.
+  
 ## Development
 
 1. Fork this repo

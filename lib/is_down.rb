@@ -1,9 +1,10 @@
 require "is_down/version"
 require "net/http"
+require "json"
 
-# check if a website is up or not using downforeveryoneorjustme.com
+# check if a website is up or not using isitup.org API
 module IsDown
-  ISUPME = "http://downforeveryoneorjustme.com"
+  ISITUP = "https://isitup.org/"
 
   # check if a website is down
   # takes a domain name as the only argument
@@ -15,6 +16,7 @@ module IsDown
   # checks if a website is up
   # takes a domain name as the only argument
   def self.is_up?(host)
-    Net::HTTP.get_response(URI(ISUPME + "/" + host)).body.include?("is up")
+    resp = Net::HTTP.get_response(URI(ISUPME + host + ".json"))
+    JSON.parse(resp.body)['status_code'] == 1
   end
 end
